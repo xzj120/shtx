@@ -1,0 +1,426 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(143, 187, 232);
+    height: 6.25rem;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header p {
+    color: aliceblue;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    background-color: rgb(82, 118, 160);
+    color: aliceblue;
+    display: flex;
+    top: 6.25rem;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.3125rem;
+    height: 3.125rem;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 0.9375rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav ul li {
+    display: inline;
+    padding: 7.5rem 7.5rem 0 7.5rem;
+    font-size: 1.5625rem;
+}
+
+ul li {
+    display: block;
+    /* 改为块级元素，实现一行一个列表项 */
+    padding: 0.625rem 0;
+    /* 调整内边距 */
+    font-size: 1.5625rem;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    padding: 3% 10% 0 10%;
+    background-color: #fff;
+}
+
+.image-container {
+    flex: 1;
+    padding: 1.25rem;
+
+}
+
+.image-container img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.text-container {
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.text-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.text-container li {
+    margin-bottom: 0.625rem;
+}
+
+.text-container a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.text-container a:hover {
+    text-decoration: underline;
+}
+
+/* 为 main 元素添加顶部外边距 */
+main {
+    margin-top: 9.375rem;
+    /* 导航栏高度 6.25rem + 头部高度 3.125rem */
+}
+
+.notice-title {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    font-size: 3.125rem;
+    font-family: 思源宋体;
+    color: #007bff;
+    top: -0.625rem;
+}
+
+.more-link {
+    float: right;
+    text-decoration: none;
+    color: #ff7f00 !important;
+    font-size: 1rem;
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notice-item {
+    background-color: #e3e7f5;
+    margin-bottom: 1.125rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+}
+
+.notice-item:hover .notice-content {
+    background-color: #234391;
+    color: #ffffff;
+}
+
+.notice-content {
+    font-size: 1.125rem;
+    font-family: 思源宋体;
+    flex: 0 0 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0.3125rem;
+    border: 0.0625rem solid #ccc;
+    box-sizing: border-box;
+    color: #000;
+    text-decoration: none;
+}
+
+.notice-content:hover {
+    text-decoration: none;
+}
+
+.tongzhi {
+    font-size: 3.25rem !important;
+    color: purple;
+    position: relative;
+    top: -0.5rem;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 37.5rem;
+    /* 可根据需求调整高度 */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    /* 图片数量 * 100% */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 33.3333%;
+    /* 100% / 图片数量 */
+    height: 100%;
+    object-fit: cover;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.625rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 3.125rem;
+}
+
+.prev-btn {
+    left: 0.625rem;
+}
+
+.next-btn {
+    right: 0.625rem;
+}
+
+/* 新增圆点样式 */
+.slider-dots {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.625rem;
+}
+
+.slider-dots .dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.slider-dots .dot.active {
+    background-color: white;
+}
+
+.new-slider-container {
+    position: relative;
+    width: 100%;
+    height: 37.5rem;
+    overflow: hidden;
+    top: 0.625rem;
+}
+
+.new-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-slider img {
+    position: absolute;
+    width: 31.25rem;
+    /* 调整图片宽度，使八张图片能在页面宽度内显示，并设置 15% 的重叠 */
+    height: 18.75rem;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0s ease;
+    z-index: 0;
+}
+
+.new-slider img.active {
+    opacity: 1;
+    z-index: 10;
+    width: 46.875rem;
+    height: 28.125rem;
+}
+
+.new-slider img.prev {
+    left: 10%;
+}
+
+.new-slider img.next {
+    right: 10%;
+}
+
+.new-prev-btn,
+.new-next-btn {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.625rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 3.125rem;
+}
+
+.new-prev-btn {
+    left: 0.625rem;
+}
+
+.new-next-btn {
+    right: 0.625rem;
+}
+
+/* 新增圆点样式 */
+.new-slider-dots {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.625rem;
+}
+
+.new-slider-dots .dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.new-slider-dots .dot.active {
+    background-color: white;
+}
+
+.new-slider-container h1 {
+    position: relative;
+    top: 1.875rem;
+    font-size: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: rgb(82, 118, 160);
+    /* 设置背景色为蓝色 */
+    color: black;
+    /* 设置字体颜色为黑色 */
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    justify-content: center;
+    /* 让文字水平居中 */
+    align-items: center;
+    /* 让文字垂直居中 */
+    height: 6.25rem;
+    /* 设置 footer 的高度，可按需调整 */
+    position: relative;
+    top: 6.25rem;
+    width: 100%;
+}
+
+/* 媒体查询，当屏幕宽度小于 768px 时（一般为平板和手机） */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    nav {
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .slider-container {
+        height: 20rem;
+        width: 100%;
+    }
+
+    .new-slider-container {
+        height: 20rem;
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .image-container img {
+        height: auto;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/* 中等屏幕设备（如平板，宽度在 768px 到 991px 之间） */
+@media (min-width: 768px) and (max-width: 991px) {
+    nav ul li {
+        padding: 2rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .text-container {
+        width: 100%;
+    }
+}
